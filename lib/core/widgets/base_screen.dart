@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:spend_wise/core/constants/app_spacing.dart';
 
 /// A foundational wrapper widget that provides:

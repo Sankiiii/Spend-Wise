@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Categories for expenses with built-in display names and Material icons.
 enum ExpenseCategory {

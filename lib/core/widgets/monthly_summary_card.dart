@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:spend_wise/core/constants/app_spacing.dart';
 import 'package:spend_wise/features/expenses/presentation/providers/expense_provider.dart';
 

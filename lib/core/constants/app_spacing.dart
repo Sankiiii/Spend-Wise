@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Centralized spacing and layout dimensions following the 8-point grid system.
 abstract final class AppSpacing {
