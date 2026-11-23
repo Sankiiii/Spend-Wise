@@ -50,64 +50,64 @@ class AppStateView<T> extends StatelessWidget {
     // Dart 3 switch expression guarantees exhaustive handling of all sealed states
     return switch (state) {
       AppLoading() => const Center(
-          child: CircularProgressIndicator.adaptive(),
-        ),
+        child: CircularProgressIndicator.adaptive(),
+      ),
       AppEmpty(:final message) => Center(
-          child: Padding(
-            padding: AppSpacing.screenPadding,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.receipt_long_outlined,
-                  size: 64,
-                  color: Theme.of(context).colorScheme.outline,
-                ),
+        child: Padding(
+          padding: AppSpacing.screenPadding,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.receipt_long_outlined,
+                size: 64,
+                color: Theme.of(context).colorScheme.outline,
+              ),
+              const SizedBox(height: AppSpacing.md),
+              Text(
+                message.isNotEmpty ? message : emptyMessage,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              if (emptyAction != null) ...[
                 const SizedBox(height: AppSpacing.md),
-                Text(
-                  message.isNotEmpty ? message : emptyMessage,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-                if (emptyAction != null) ...[
-                  const SizedBox(height: AppSpacing.md),
-                  emptyAction!,
-                ],
+                emptyAction!,
               ],
-            ),
+            ],
           ),
         ),
+      ),
       AppError(:final message, :final onRetry) => Center(
-          child: Padding(
-            padding: AppSpacing.screenPadding,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.error_outline_rounded,
-                  size: 64,
+        child: Padding(
+          padding: AppSpacing.screenPadding,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.error_outline_rounded,
+                size: 64,
+                color: Theme.of(context).colorScheme.error,
+              ),
+              const SizedBox(height: AppSpacing.md),
+              Text(
+                message,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: Theme.of(context).colorScheme.error,
                 ),
+                textAlign: TextAlign.center,
+              ),
+              if (onRetry != null) ...[
                 const SizedBox(height: AppSpacing.md),
-                Text(
-                  message,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Theme.of(context).colorScheme.error,
-                      ),
-                  textAlign: TextAlign.center,
+                FilledButton.icon(
+                  onPressed: onRetry,
+                  icon: const Icon(Icons.refresh_rounded),
+                  label: const Text('Retry'),
                 ),
-                if (onRetry != null) ...[
-                  const SizedBox(height: AppSpacing.md),
-                  FilledButton.icon(
-                    onPressed: onRetry,
-                    icon: const Icon(Icons.refresh_rounded),
-                    label: const Text('Retry'),
-                  ),
-                ],
               ],
-            ),
+            ],
           ),
         ),
+      ),
       AppData(:final data) => dataBuilder(context, data),
     };
   }

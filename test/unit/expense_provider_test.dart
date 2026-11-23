@@ -79,7 +79,8 @@ void main() {
           id: '2',
           title: 'Yesterday Dinner',
           amount: 600,
-          date: yesterday, // Yesterday (Should NOT be counted in today's total!)
+          date:
+              yesterday, // Yesterday (Should NOT be counted in today's total!)
           category: ExpenseCategory.food,
         ),
       ];

@@ -9,7 +9,6 @@ import 'package:spend_wise/features/expenses/domain/expense_model.dart';
 import 'package:spend_wise/features/expenses/presentation/add_expense_screen.dart';
 import 'package:spend_wise/features/expenses/presentation/providers/expense_provider.dart';
 
-
 /// The main dashboard screen showing summary metrics and transaction history.
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
@@ -55,8 +54,8 @@ class DashboardScreen extends ConsumerWidget {
             child: Text(
               'Recent Transactions',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(height: AppSpacing.sm),

@@ -19,16 +19,16 @@ class ExpenseLocalRepository {
       final prefs = await SharedPreferences.getInstance();
       final rawList = prefs.getStringList(_storageKey) ?? [];
 
-      final expenses = rawList.map((item) {
-        final map = jsonDecode(item) as Map<String, dynamic>;
-        return ExpenseModel.fromJson(map);
-      }).toList()
-
-      // Sort descending (latest expense at the top)
-      ..sort((a, b) => b.date.compareTo(a.date));
+      final expenses =
+          rawList.map((item) {
+              final map = jsonDecode(item) as Map<String, dynamic>;
+              return ExpenseModel.fromJson(map);
+            }).toList()
+            // Sort descending (latest expense at the top)
+            ..sort((a, b) => b.date.compareTo(a.date));
       return expenses;
-    // Fallback to empty list if reading or deserialization fails.
-    // ignore: avoid_catches_without_on_clauses
+      // Fallback to empty list if reading or deserialization fails.
+      // ignore: avoid_catches_without_on_clauses
     } catch (e, stack) {
       debugPrint('Error loading expenses from local storage: $e\n$stack');
       return [];

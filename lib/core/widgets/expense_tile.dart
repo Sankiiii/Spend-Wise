@@ -50,23 +50,23 @@ class ExpenseTile extends StatelessWidget {
           title: Text(
             expense.title,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
+              fontWeight: FontWeight.w600,
+            ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           subtitle: Text(
             '${expense.category.displayName} • ${dateFormat.format(expense.date)}',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: colorScheme.outline,
-                ),
+              color: colorScheme.outline,
+            ),
           ),
           trailing: Text(
             currencyFormat.format(expense.amount),
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: colorScheme.primary,
-                ),
+              fontWeight: FontWeight.bold,
+              color: colorScheme.primary,
+            ),
           ),
         ),
       ),

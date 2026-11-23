@@ -34,8 +34,9 @@ class BaseScreen extends StatelessWidget {
           child: LayoutBuilder(
             builder: (context, constraints) {
               // Clamp to 600px max width for tablet & web responsiveness
-              final maxWidth =
-                  constraints.maxWidth > 600 ? 600.0 : constraints.maxWidth;
+              final maxWidth = constraints.maxWidth > 600
+                  ? 600.0
+                  : constraints.maxWidth;
 
               final content = Center(
                 child: SizedBox(

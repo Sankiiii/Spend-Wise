@@ -41,21 +41,24 @@ void main() {
       expect(model.date, testDate);
     });
 
-    test('copyWith() returns updated copy while keeping other fields unchanged', () {
-      final updated = sampleExpense.copyWith(
-        title: 'Starbucks Coffee',
-        amount: 320,
-      );
+    test(
+      'copyWith() returns updated copy while keeping other fields unchanged',
+      () {
+        final updated = sampleExpense.copyWith(
+          title: 'Starbucks Coffee',
+          amount: 320,
+        );
 
-      // Changed fields
-      expect(updated.title, 'Starbucks Coffee');
-      expect(updated.amount, 320.0);
+        // Changed fields
+        expect(updated.title, 'Starbucks Coffee');
+        expect(updated.amount, 320.0);
 
-      // Unchanged fields preserved
-      expect(updated.id, sampleExpense.id);
-      expect(updated.date, sampleExpense.date);
-      expect(updated.category, sampleExpense.category);
-    });
+        // Unchanged fields preserved
+        expect(updated.id, sampleExpense.id);
+        expect(updated.date, sampleExpense.date);
+        expect(updated.category, sampleExpense.category);
+      },
+    );
 
     test('Value equality (==) returns true for identical instances', () {
       final duplicateExpense = ExpenseModel(

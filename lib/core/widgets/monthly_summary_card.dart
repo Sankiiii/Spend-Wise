@@ -71,9 +71,9 @@ class _MetricItem extends StatelessWidget {
         Text(
           label,
           style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                color: Theme.of(context).colorScheme.outline,
-                fontWeight: FontWeight.w600,
-              ),
+            color: Theme.of(context).colorScheme.outline,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         const SizedBox(height: AppSpacing.xs),
         FittedBox(
@@ -81,9 +81,9 @@ class _MetricItem extends StatelessWidget {
           child: Text(
             amount,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: amountColor,
-                ),
+              fontWeight: FontWeight.bold,
+              color: amountColor,
+            ),
           ),
         ),
       ],

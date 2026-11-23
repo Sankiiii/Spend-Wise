@@ -52,8 +52,8 @@ class ExpenseListNotifier extends Notifier<AppState<List<ExpenseModel>>> {
 /// Global provider for managing the expense list state.
 final expenseListProvider =
     NotifierProvider<ExpenseListNotifier, AppState<List<ExpenseModel>>>(
-  ExpenseListNotifier.new,
-);
+      ExpenseListNotifier.new,
+    );
 
 /// Computed provider that calculates total spent in the current month.
 final monthlyTotalProvider = Provider<double>((ref) {
@@ -62,8 +62,7 @@ final monthlyTotalProvider = Provider<double>((ref) {
     final now = DateTime.now();
     return expenseState.data
         .where(
-          (item) =>
-              item.date.year == now.year && item.date.month == now.month,
+          (item) => item.date.year == now.year && item.date.month == now.month,
         )
         .fold(0, (sum, item) => sum + item.amount);
   }

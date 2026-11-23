@@ -73,8 +73,8 @@ class _AddExpenseScreenState extends ConsumerState<AddExpenseScreen> {
       );
 
       Navigator.of(context).pop();
-    // Catch any unexpected error to display error feedback to the user.
-    // ignore: avoid_catches_without_on_clauses
+      // Catch any unexpected error to display error feedback to the user.
+      // ignore: avoid_catches_without_on_clauses
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -128,7 +128,9 @@ class _AddExpenseScreenState extends ConsumerState<AddExpenseScreen> {
                 hintText: '0.00',
                 prefixIcon: Icon(Icons.currency_rupee),
               ),
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(
+                decimal: true,
+              ),
               validator: (value) {
                 if (value == null || value.trim().isEmpty) {
                   return 'Please enter an amount.';
