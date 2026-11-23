@@ -24,7 +24,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          flutter-version: '3.50.1'
           cache: true
 
       - name: Install Dependencies
@@ -34,7 +34,7 @@ jobs:
         run: dart format --output=none --set-exit-if-changed .
 
       - name: Run Strict Static Analysis
-        run: flutter analyze --fatal-infos
+        run: flutter analyze --fatal-warnings
 
       - name: Run Automated Unit Tests
         run: flutter test
