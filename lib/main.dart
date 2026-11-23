@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:spend_wise/core/theme/app_theme.dart';
-import 'package:spend_wise/core/widgets/base_screen.dart';
+import 'package:spend_wise/features/expenses/presentation/dashboard_screen.dart';
 
 void main() {
   runZonedGuarded(
@@ -46,27 +46,7 @@ class SpendWiseApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const _BootstrapScreen(),
-    );
-  }
-}
-
-/// Temporary bootstrap screen to verify BaseScreen and AppTheme.
-class _BootstrapScreen extends StatelessWidget {
-  const _BootstrapScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return BaseScreen(
-      appBar: AppBar(
-        title: const Text('SpendWise Architecture Ready'),
-      ),
-      body: const Center(
-        child: Text(
-          'Core Foundation & Crash Shield Active!',
-          textAlign: TextAlign.center,
-        ),
-      ),
+      home: const DashboardScreen(),
     );
   }
 }

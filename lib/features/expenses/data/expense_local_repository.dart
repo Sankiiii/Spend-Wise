@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:spend_wise/feature/expenses/domain/expense_model.dart';
+import 'package:spend_wise/features/expenses/domain/expense_model.dart';
 
 /// Riverpod provider to inject the repository across the application.
 final expenseRepositoryProvider = Provider<ExpenseLocalRepository>((ref) {
